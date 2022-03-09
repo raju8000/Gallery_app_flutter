@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:photoapp/Screen/Component/ui_component.dart';
+import 'Component/ui_component.dart';
 
 class ScreenImage extends StatelessWidget {
   const ScreenImage({Key? key, required this.asset,}) : super(key: key);
@@ -27,7 +27,7 @@ class ScreenImage extends StatelessWidget {
               try{
                 await PhotoManager.editor.deleteWithIds([asset.id]);
               }catch(error){
-                print("ERROR: "+error.toString());
+                debugPrint("ERROR: "+error.toString());
               }
               Navigator.of(context).pop();
               Navigator.of(context).pop(true);

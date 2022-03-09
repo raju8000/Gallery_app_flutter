@@ -1,16 +1,14 @@
+import 'package:Gallery_app/bloc/gallery_cubit.dart';
+import 'package:Gallery_app/bloc/gallery_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:photoapp/Screen/Component/ui_component.dart';
-import 'package:photoapp/Screen/gallery_item_widget.dart';
-import 'package:photoapp/bolc/gallery_cubit.dart';
-import 'package:photoapp/bolc/gallery_state.dart';
+import 'Component/ui_component.dart';
+import 'gallery_item_widget.dart';
 
-
-List<int> itemToDelete = [];
 class Gallery extends StatefulWidget {
   const Gallery({Key? key}) : super(key: key);
   static const routeName = "screenGallery";
@@ -59,20 +57,20 @@ class _GalleryState extends State<Gallery> {
               return IconButton(
                   onPressed: () {
                     if (state.deleteMode) {
-                      if(itemToDelete.isNotEmpty) {
+                      if(state.itemToDelete.isNotEmpty) {
                         Ui.showConfirmationAlert(context,  () async {
                           Ui.showLoadingDialog(context);
 
                           try{
-                            await Future.wait(itemToDelete.map((element)async {
+                            await Future.wait(state.itemToDelete.map((element)async {
                               String ids =  assets[element].id;
                               await PhotoManager.editor.deleteWithIds([ids]);
 
                             }));
                           }catch(error){
-                            print("ERROR: "+error.toString());
+                            debugPrint("ERROR: "+error.toString());
                           }
-                          itemToDelete.clear();
+                          state.itemToDelete.clear();
                           _galleryCubit.changeDeleteMode(false);
                           _galleryCubit.fetchAssets();
                           Navigator.of(context).pop();
@@ -146,5 +144,4 @@ class _GalleryState extends State<Gallery> {
       }
     });
   }
-
 }

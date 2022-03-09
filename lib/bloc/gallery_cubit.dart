@@ -1,6 +1,6 @@
+import 'package:Gallery_app/bloc/gallery_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:photoapp/bolc/gallery_state.dart';
 
 class GalleryCubit extends Cubit<GalleryState> {
   GalleryCubit() : super(GalleryLoading());

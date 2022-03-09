@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:photoapp/Routes/route_generator.dart';
-import 'package:photoapp/Screen/screen_gallery.dart';
-import 'package:photoapp/bolc/gallery_cubit.dart';
+import 'Routes/route_generator.dart';
+import 'Screen/screen_gallery.dart';
+import 'bloc/gallery_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RouteGenerator.generateRoute,
         initialRoute: Gallery.routeName,
-        //home: Gallery()
 
       ),
     );

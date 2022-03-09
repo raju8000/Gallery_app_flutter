@@ -1,15 +1,12 @@
-# Gallery App Flutter
+# Gallery App in Flutter with BLoC
 
 A a gallery app created in flutter with flutter_bloc state management with image_piker also display fresh image
 captured from camera
 
 ## Library used
 
-cupertino_icons: ^1.0.2,
-photo_manager: ^1.3.10,
-image_picker: ^0.8.4+4,
-image_gallery_saver: ^1.7.1,
-flutter_bloc: ^7.3.0,
+For Project explanation go to [http://devblog.link/gallery-app-in-flutter-with-bloc](http://devblog.link/gallery-app-in-flutter-with-bloc/).
 
-[View Flutter related post](http://devblog.link/), which offers tutorials,
-samples, guidance on mobile development.
+#### _Find more blog related to flutter on [devblog.link](http://devblog.link/)_
+
+![Gallery App in Flutter with BLoC](http://devblog.link/wp-content/uploads/2022/03/gallery_app.gif)

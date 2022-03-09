@@ -1,10 +1,8 @@
-import 'dart:io';
-
+import 'package:Gallery_app/Screen/screen_gallery.dart';
+import 'package:Gallery_app/Screen/screen_single_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:photoapp/Screen/screen_gallery.dart';
-import 'package:photoapp/Screen/screen_single_image.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {

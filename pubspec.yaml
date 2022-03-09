@@ -1,6 +1,5 @@
-name: Gallery app
-description: A a gallery app created in flutter with flutter_bloc state management with image_piker also display fresh image
-captured from camera
+name: Gallery_app
+description: A a gallery app created in flutter with flutter_bloc state management with image_piker also display fresh image captured from camera
 
 version: 1.0.0+1
 

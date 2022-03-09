@@ -1,12 +1,11 @@
 import 'dart:typed_data';
+import 'package:Gallery_app/Screen/screen_single_image.dart';
+import 'package:Gallery_app/bloc/gallery_cubit.dart';
+import 'package:Gallery_app/bloc/gallery_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:photoapp/Screen/screen_gallery.dart';
-import 'package:photoapp/Screen/screen_single_image.dart';
-import 'package:photoapp/bolc/gallery_cubit.dart';
-import 'package:photoapp/bolc/gallery_state.dart';
 
 class GalleryItem extends StatefulWidget {
   const GalleryItem(this.asset, this.index, {Key? key}) : super(key: key);
@@ -36,10 +35,10 @@ class _GalleryItemState extends State<GalleryItem> {
                   onTap: () {
                     if(provider.deleteMode){
                       setState(() {
-                        if(itemToDelete.contains(index)){
-                          itemToDelete.remove(index);
+                        if(state.itemToDelete.contains(index)){
+                          state.itemToDelete.remove(index);
                         }else {
-                          itemToDelete.add(index);
+                          state.itemToDelete.add(index);
                         }
                       });
 
@@ -61,14 +60,14 @@ class _GalleryItemState extends State<GalleryItem> {
                           if(provider.deleteMode)
                             Align( alignment: Alignment.topRight,
                               child: Checkbox(
-                                value: itemToDelete.contains(index),
+                                value: state.itemToDelete.contains(index),
                                 activeColor: Colors.brown,
                                 onChanged: (value) {
                                   setState(() {
-                                    if(itemToDelete.contains(index)){
-                                      itemToDelete.remove(index);
+                                    if(state.itemToDelete.contains(index)){
+                                      state.itemToDelete.remove(index);
                                     }else {
-                                      itemToDelete.add(index);
+                                      state.itemToDelete.add(index);
                                     }
                                   });
                                 },
